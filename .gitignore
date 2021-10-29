@@ -5,3 +5,5 @@ yarn.lock
 /assets/public/css
 /assets/public/js
 .DS_Store
+/inc/acf
+/functions/acf-functions.php
