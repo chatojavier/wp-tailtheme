@@ -41,7 +41,9 @@
       "./assets/public/css/**/*.css",
       "./vendor/**/**/*.css",
       "./node_modules/**/**/*.css",
-      "./tests/**/**/*.css"
+      "./tests/**/**/*.css",
+      "./inc/**/*.css",
+      "./*.css"
     ],
     "extends": [
       "./webpack/.stylelintrc.js"

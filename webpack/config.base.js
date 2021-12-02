@@ -66,6 +66,22 @@ module.exports = (projectOptions) => {
   }
 
   /**
+   * Fonts rules
+   */
+  const fontRules = {
+    test: projectOptions.projectFonts.rules.test,
+    exclude: [projectOptions.projectImagesPath, /node_modules/],
+    use: {
+      loader: 'file-loader', // Or `url-loader` or your other loader
+      options: {
+        name: '[name].[ext]',
+        outputPath: 'fonts/',
+        publicPath: (url) => '../fonts/' + url,
+      },
+    },
+  }
+
+  /**
    * Optimization rules
    */
   const optimizations = {}
@@ -122,6 +138,7 @@ module.exports = (projectOptions) => {
     cssRules: cssRules,
     jsRules: jsRules,
     imageRules: imageRules,
+    fontRules: fontRules,
     optimizations: optimizations,
     plugins: plugins,
   }

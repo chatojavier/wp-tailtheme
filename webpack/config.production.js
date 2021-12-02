@@ -45,6 +45,15 @@ module.exports = ( projectOptions ) => {
     }
 
     /**
+    * Font rules
+    */
+    const fontRules = {
+        ...Base.fontRules, ...{
+            // add font rules for development here
+        },
+    }
+
+    /**
      * Optimizations rules
      */
     const optimizations = {
@@ -97,7 +106,7 @@ module.exports = ( projectOptions ) => {
         },
         devtool:      sourceMap.devtool,
         optimization: optimizations,
-        module:       { rules: [ cssRules, jsRules, imageRules ], },
+        module:       { rules: [ cssRules, jsRules, imageRules, fontRules ], },
         plugins:      plugins,
     }
 }

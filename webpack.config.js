@@ -107,6 +107,12 @@ const projectFiles = {
       ],
     },
   },
+  // Font configurations for development and production
+  projectFonts: {
+    rules: {
+      test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+    },
+  },
 }
 
 // Merging the projectFiles & projectPaths objects
