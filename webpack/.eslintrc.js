@@ -18,8 +18,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:@wordpress/eslint-plugin/recommended',
-    'eslintConfig.extends'
+    'plugin:@wordpress/eslint-plugin/recommended'
   ],
   rules: {},
   globals: {

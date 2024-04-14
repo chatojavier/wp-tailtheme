@@ -19,12 +19,12 @@ const projectPaths = {
 const projectFiles = {
   // BrowserSync settings
   browserSync: {
-    enable: false, // enable or disable browserSync
+    enable: true, // enable or disable browserSync
     host: 'localhost',
     port: 3000,
     mode: 'proxy', // proxy | server
     server: { baseDir: ['public'] }, // can be ignored if using proxy
-    proxy: 'https://wp-strap.lndo.site',
+    proxy: 'http://example-host.local', // change this to your local development URL
     // BrowserSync will automatically watch for changes to any files connected to our entry,
     // including both JS and Sass files. We can use this property to tell BrowserSync to watch
     // for other types of files, in this case PHP files, in our project.
@@ -101,7 +101,10 @@ const projectFiles = {
         [
           'svgo',
           {
-            plugins: [{ removeViewBox: false }],
+            plugins: [{
+              name: 'removeViewBox',
+              active: false
+            }],
           },
         ],
       ],

@@ -5,7 +5,7 @@
  *
  * @since 1.0.0
  */
-const glob           = require( 'glob-all' );
+const { globSync } = require( 'glob' );
 const PurgecssPlugin = require( 'purgecss-webpack-plugin' )  // A tool to remove unused CSS
 
 module.exports = ( projectOptions ) => {
@@ -78,7 +78,7 @@ module.exports = ( projectOptions ) => {
     const plugins = [
         ...Base.plugins, ...[
             new PurgecssPlugin( { // Scans files and removes unused CSS
-                paths: glob.sync( projectOptions.projectCss.purgeCss.paths, { nodir: true } ),
+                paths: globSync( projectOptions.projectCss.purgeCss.paths, { nodir: true } ),
             } ),
             // add plugins for production here
         ]

@@ -6,7 +6,7 @@
  */
 const magicImporter = require('node-sass-magic-importer') // Add magic import functionalities to SASS
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // Extracts the CSS files into public/css
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin') // Synchronising URLs, interactions and code changes across devices
+const BrowserSyncPlugin = require('browser-sync-v3-webpack-plugin') // Synchronising URLs, interactions and code changes across devices
 const WebpackBar = require('webpackbar') // Display elegant progress bar while building or watch
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin') // To optimize (compress) all images using
 const CopyPlugin = require('copy-webpack-plugin') // For WordPress we need to copy images from src to public to optimize them
@@ -108,7 +108,7 @@ module.exports = (projectOptions) => {
     }),
     new ImageMinimizerPlugin({
       // Optimizes images
-      minimizerOptions: projectOptions.projectImages.minimizerOptions,
+      minimizer: { options: projectOptions.projectImages.minimizerOptions, implementation: ImageMinimizerPlugin.imageminMinify },
     }),
   ]
   // Add browserSync to plugins if enabled
